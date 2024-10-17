@@ -34,22 +34,20 @@
             <div class="carousel-item active">
                 <img src="./Img/cover1.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>Some representative placeholder content for the first slide.</p>
+                    <h1>Explore, Solve, Evolve</h1>
                 </div>
             </div>
             <div class="carousel-item ">
                 <img src="./Img/cover2.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Some representative placeholder content for the second slide.</p>
+                    <h1>The Pulse of Innovation</h1>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="./Img/cover3.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>Some representative placeholder content for the third slide.</p>
+                    <h1>Solving Problems, Sparking Ideas</h1>
+
                 </div>
             </div>
         </div>
