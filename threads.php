@@ -136,8 +136,8 @@
                 <div class="media my-3">
                     <img src="./Img/user.jpg" width="70px" class=" mr-3" alt="...">
                     <div class="media-body">'.'
-                        <h5 class="mt-0">
-                            <a class="text-dark" href="./thread.php?threadid='.$id.' ">'.$title.'</a>
+                        <h5 class="mt-0 text-primary">
+                            <a class="text-primary text-decoration-none" href="./thread.php?threadid='.$id.' ">'.$title.'</a>
                         </h5>
                         <p>'.$desc.'</p>
                     </div>'.'<p class="font-weight-bold my-0">'.$row2['user_email'].' at '.$thread_time.'</p>'.'

@@ -83,7 +83,7 @@
         if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
             echo '  
             <div class="container">
-                <h1 class="py-2" >Post a comment</h1>
+                <h1 class="py-2 text-primary" >Post a comment</h1>
                 <form action="'.$_SERVER['REQUEST_URI'].'" method="post">
                     <div class="form-group"> 
                         <label for="exampleFormControlTextarea1">reply here </label>
@@ -105,7 +105,7 @@
 
     <!-- Ask Question Query -->
     <div class="container my-5 "  id="ques">
-        <h1 class="py-2">Comments</h1> 
+        <h1 class="py-2 text-primary">Comments</h1> 
         <?php 
             $id = $_GET['threadid']; 
             $sql = "SELECT * FROM `comments` WHERE thread_id = $id ";
@@ -123,11 +123,11 @@
                 $row2 = mysqli_fetch_assoc($result2);
                
                 echo '
-                <div class="media my-3">
+                <div class="media my-3 d-flex align-items-center">
                     <img src="./Img/user.jpg" width="70px" class=" mr-3" alt="...">
                     <div class="media-body">'.$content.'
                     </div>'.'
-                    <p class="font-weight-bold my-0">'.$row2['user_email'].' at '.$c_time.'</p>
+                    <p class="font-weight-bold my-0 text-primary">'.$row2['user_email'].' at '.$c_time.'</p>
                 '.'</div>';
             }
             if($noResult){

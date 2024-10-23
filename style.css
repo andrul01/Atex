@@ -13,6 +13,10 @@ body{
 
 .navbar-nav li a{
     font-size: 20px;
+}
+.nav-link:hover{
+    color: rgb(12, 136, 253);
+    font-size: 20px;
 
 }
 
