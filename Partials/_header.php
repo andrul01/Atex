@@ -48,18 +48,22 @@
         <form class="form-inline my-2 my-lg-0  action="search.php" method="get">
           <input class="form-control mr-sm-2" name="search" type="search"  placeholder="Search" aria-label="Search">
           <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
-          <p class="text-light my-0 mx-2" > <a href="profile.php" > Welcome '.$_SESSION['useremail'].'</a></p>
+          <p class=" my-0 mx-2" >
+            <a class="text-decoration-none text-light  py-2" href="profile.php">
+              Welcome '.$_SESSION['useremail'].'
+            </a>
+          </p>
           <a href="./Partials/_logout.php" class="btn btn-outline-primary ml-2">Logout</a>
         </form>';
       }
       else{
         echo '
-        <form class="form-inline my-2 my-lg-0" action="search.php" method="get">
+        <form class="form-inline my-2 my-lg-0 " action="search.php" method="get">
           <input class="form-control mr-sm-2" type="search" name="search"  placeholder="Search" aria-label="Search">
           <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
         </form>
-        <button class="btn btn-outline-primary ml-2" data-toggle="modal" data-target="#login">Login</button>
-        <button class="btn btn-outline-primary mx-2" data-toggle="modal" data-target="#signup">Signup</button>';
+        <button class="btn btn-outline-primary ml-2 my-2 my-sm-0" data-toggle="modal" data-target="#login">Login</button>
+        <button class="btn btn-outline-primary mx-2 my-2 my-sm-0" data-toggle="modal" data-target="#signup">Signup</button>';
       }
       echo '
       </div>

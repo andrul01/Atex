@@ -140,7 +140,11 @@
                             <a class="text-primary text-decoration-none" href="./thread.php?threadid='.$id.' ">'.$title.'</a>
                         </h5>
                         <p>'.$desc.'</p>
-                    </div>'.'<p class="font-weight-bold my-0">'.$row2['user_email'].' at '.$thread_time.'</p>'.'
+                    </div>
+                    <p class="font-weight-bold my-0">
+                        <span class="text-primary">'.$row2['user_email'].'</span>
+                        at '.$thread_time.'
+                    </p>'.'
                 </div>';
                }
 

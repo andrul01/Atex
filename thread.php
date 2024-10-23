@@ -127,7 +127,10 @@
                     <img src="./Img/user.jpg" width="70px" class=" mr-3" alt="...">
                     <div class="media-body">'.$content.'
                     </div>'.'
-                    <p class="font-weight-bold my-0 text-primary">'.$row2['user_email'].' at '.$c_time.'</p>
+                    <p class="font-weight-bold my-0">
+                        <span class=" font-weight-bold my-0 text-primary">'.$row2['user_email'].'</span>
+                        at '.$c_time.'
+                    </p>
                 '.'</div>';
             }
             if($noResult){
