@@ -38,18 +38,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Admin Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+    <link rel="icon" href="assets/images/favicon.png"/>
+    <title>Atex - Admin login panel</title>
 </head>
 <body>
-    <h2>Admin Login</h2>
-    <form method="POST" action="">
-        <label>Username:</label>
-        <input type="text" name="username" required>
-        <br>
-        <label>Password:</label>
-        <input type="password" name="password" required>
-        <br>
-        <button type="submit">Login</button>
-    </form>
+    <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Admin Login</h5>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="">
+                        <label>Username:</label>
+                        <input type="text" name="username" required>
+                        <br>
+                        <label>Password:</label>
+                        <input type="password" name="password" required>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>

@@ -10,7 +10,7 @@ require 'includes/config.php'; // Database connection
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
     <link rel="icon" href="assets/images/favicon.png" />
     <title>Atex - Admin panel</title>
 </head>
@@ -26,7 +26,7 @@ require 'includes/config.php'; // Database connection
 
                 <!-- Logo and Brand -->
                 <div class="container col-2">
-                    <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <a class="navbar-brand d-flex align-items-center" href="dashboard.php">
                         <img src="./assets/images/logo.png" alt="Logo" width="40px" class="me-2">
                         <h3 class="m-0 px-1">tex</h3>
                     </a>
@@ -204,9 +204,7 @@ require 'includes/config.php'; // Database connection
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-        crossorigin="anonymous"></script>
+    <script src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
