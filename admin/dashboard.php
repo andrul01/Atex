@@ -1,14 +1,18 @@
+
+<?php
+require 'includes/config.php'; // Database connection
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-
-    <link rel="shortcut icon" href="assets/images/favicon.png" />
-    <title>Atex Admin</title>
+    <link rel="stylesheet" href="./assets/bootstrap/bootstrap.css">
+    <link rel="icon" href="assets/images/favicon.png" />
+    <title>Atex - Admin panel</title>
 </head>
 
 <body>
@@ -30,12 +34,13 @@
 
                 <div class="container col-10">
                     <!--Left side  Search Bar -->
-                    <div class="row ms-auto ">            
+                    <div class="row ms-auto ">
                         <form class="d-flex mx-auto" role="search">
                             <button class="btn shadow-none" type="submit">
                                 <img src="./assets/images/menu.png" width="24px" alt="">
                             </button>
-                            <input class="form-control me-2 border-0 shadow-none" type="search" placeholder="Search" aria-label="Search">
+                            <input class="form-control me-2 border-0 shadow-none" type="search" placeholder="Search"
+                                aria-label="Search">
                         </form>
                     </div>
                     <!-- Right Side Icons -->
@@ -131,20 +136,24 @@
                         <div class="col-6 border p-3">
                             <div class="row g-3">
                                 <!-- First Row -->
-                                <div class="col d-flex justify-content-center border ">
-                                    <img src="./assets/images/welcome.png" width="250" class="border rounded" alt="people">
+                                <div class="col d-flex justify-content-center border  p-3">
+                                    <img src="./assets/images/welcome.png" width="250" class="border rounded"
+                                        alt="people">
                                 </div>
-                                <div class="col d-flex justify-content-center border">
-                                    <img src="./assets/images/welcome.png" width="250" class="border rounded" alt="people">
+                                <div class="col d-flex justify-content-center border p-3">
+                                    <img src="./assets/images/welcome.png" width="250" class="border rounded"
+                                        alt="people">
                                 </div>
                             </div>
                             <div class="row g-3 mt-2">
                                 <!-- Second Row -->
-                                <div class="col d-flex justify-content-center border">
-                                    <img src="./assets/images/welcome.png" width="250" class="border rounded" alt="people">
+                                <div class="col d-flex justify-content-center border p-3">
+                                    <img src="./assets/images/welcome.png" width="250" class="border rounded"
+                                        alt="people">
                                 </div>
-                                <div class="col d-flex justify-content-center border">
-                                    <img src="./assets/images/welcome.png" width="250" class="border rounded" alt="people">
+                                <div class="col d-flex justify-content-center border p-3">
+                                    <img src="./assets/images/welcome.png" width="250" class="border rounded"
+                                        alt="people">
                                 </div>
                             </div>
                         </div>
@@ -159,15 +168,15 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="table-responsive bg-primary text-white  container-fluid border rounded"">
-                                            <table id="example" class="display expandable-table" style="width:100%">
-                                                <thead >
-                                                    <tr>
-                                                        <th class="p-2">Id no.</th>
-                                                        <th>Username</th>
-                                                        <th>Email</th>
-                                                        <th>Password</th>
-                                                    </tr>
-                                                </thead>
+                                            <table id=" example" class="display expandable-table" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th class="p-2">Id no.</th>
+                                                    <th>Username</th>
+                                                    <th>Email</th>
+                                                    <th>Password</th>
+                                                </tr>
+                                            </thead>
                                             </table>
                                         </div>
                                     </div>
