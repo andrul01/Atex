@@ -25,6 +25,7 @@
             $_SESSION['admin'] = true;              // Set admin session
             $_SESSION['username'] = $username;      // Store username
             $_SESSION['sno'] = $row['id'];          // Store user ID (primary key)
+            
             // Redirect to the dashboard
             header("Location: dashboard.php");
             exit();
@@ -33,6 +34,8 @@
             header("Location: index.php"); 
         }
     }
+    
+
 ?>
 
 <!DOCTYPE html>
@@ -45,23 +48,24 @@
     <title>Atex - Admin login panel</title>
 </head>
 <body>
-    <div class="modal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Admin Login</h5>
+     <div class="container my-5 ">
+        <div class="container-fluid">
+            <div class="row-12 bg-primary text-white p-2">
+                <div class="col-12">
+                    <h1>Admin login</h1>
+    
                 </div>
-                <div class="modal-body">
-                    <form method="POST" action="">
-                        <label>Username:</label>
-                        <input type="text" name="username" required>
-                        <br>
-                        <label>Password:</label>
-                        <input type="password" name="password" required>
-                        <br>
-                        <button type="submit" class="btn btn-primary">Login</button>
-                    </form>
-                </div>
+            </div>
+            <div class="row-12 p-3">
+                <form method="POST" action="">
+                    <label>Username:</label>
+                    <input type="text" class="form-control" name="username" required>
+                    <br>
+                    <label>Password:</label>
+                    <input type="password" class="form-control" name="password" required>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
             </div>
         </div>
     </div>

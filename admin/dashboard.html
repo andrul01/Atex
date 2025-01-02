@@ -19,7 +19,6 @@ require 'includes/config.php'; // Database connection
     <div class="container-scroller border d-flex flex-column overflow-auto">
 
         <div class="container my-3"></div>
-
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm ">
             <div class="container-fluid d-flex">
@@ -73,40 +72,39 @@ require 'includes/config.php'; // Database connection
         <div class="container-fluid my-5 d-flex ">
 
             <!-- sidebar -->
-            <nav class="sidebar col-2 my-4 " id="sidebar">
+            <nav class="sidebar col-2 my-4 d-lg-block d-none mx-1 pl-0 " width="256px" id="sidebar">
                 <ul class="nav flex-column ">
-                    <li
-                        class="nav-item active bg-primary  d-flex align-items-center jusitfy-content-center rounded pr-3">
+                    <li class="nav-item active bg-primary  d-flex align-items-center jusitfy-content-center rounded pr-3 ">
                         <a class="nav-link" href="">
-                            <img src="./assets/images/dashboard.png" alt="">
+                            <img src="./assets/images/dashboard.png"  alt="">
                         </a>
                         <span class="text-white">Dashboard</span>
                     </li>
-                    <li class="nav-item bg-primary d-flex align-items-center jusitfy-content-center rounded mt-2 pr-3">
+                    <li class="nav-item bg-primary d-flex align-items-center jusitfy-content-center rounded mt-2 pr-3 ">
                         <a class="nav-link" href="#users">
                             <img src="./assets/images/user.png" width="24px" alt="">
                         </a>
                         <span class="text-white">Users</span>
                     </li>
-                    <li class="nav-item bg-primary d-flex align-items-center jusitfy-content-center rounded mt-2 pr-3">
+                    <li class="nav-item bg-primary d-flex align-items-center jusitfy-content-center rounded mt-2 pr-3 ">
                         <a class="nav-link" href="">
                             <img src="./assets/images/categories.png" width="24px" alt="">
                         </a>
                         <span class="text-white">Categories</span>
                     </li>
-                    <li class="nav-item bg-primary  d-flex align-items-center jusitfy-content-center rounded mt-2 pr-3">
+                    <li class="nav-item bg-primary  d-flex align-items-center jusitfy-content-center rounded mt-2 pr-3 ">
                         <a class="nav-link" href="">
                             <img src="./assets/images/post.png" width="24px" alt="">
                         </a>
                         <span class="text-white">Posts</span>
                     </li>
-                    <li class="nav-item bg-primary  d-flex align-items-center jusitfy-content-center rounded mt-2 pr-3">
+                    <li class="nav-item bg-primary  d-flex align-items-center jusitfy-content-center rounded mt-2 pr-3 ">
                         <a class="nav-link" href="">
                             <img src="./assets/images/comment.png" width="24px" alt="">
                         </a>
                         <span class="text-white">Comments</span>
                     </li>
-                    <li class="nav-item bg-primary  d-flex align-items-center jusitfy-content-center rounded mt-2 pr-3">
+                    <li class="nav-item bg-primary  d-flex align-items-center jusitfy-content-center rounded mt-2 pr-3 ">
                         <a class="nav-link" href="">
                             <img src="./assets/images/document.png" width="24px" alt="">
                         </a>
@@ -116,51 +114,53 @@ require 'includes/config.php'; // Database connection
             </nav>
 
             <!-- main panel -->
-            <div class="container-fluid main-panel bg-light my-2 py-4">
-                <div class="container-fluid bg-light">
-                    <div class="row ">
-                        <div class="col-12">
-                            <h3>Welcome Andrul</h3>
-                            <h6>All systems are running smoothly!
-                                <span class="text-primary"> You have 3 unread alerts!</span>
-                            </h6>
-                        </div>
-                        <div class="col-12">
+            <div class="container-fluid main-panel bg-light my-2 py-4 ">
 
-                        </div>
+                <!-- welcome message -->
+                <div class="row-12 mb-5">
+                    <div class="col-12">
+                        <h3>Welcome Andrul</h3>
+                        <h6>All systems are running smoothly!
+                            <span class="text-primary"> You have 3 unread alerts!</span>
+                        </h6>
                     </div>
-                    <div class="row my-5 border ">
-                        <div class="col-6 border d-flex align-items-center justify-content-center">
-                            <img src="./assets/images/welcome.png" width="500px" class="border rounded" alt="people">
-                        </div>
-                        <div class="col-6 border p-3">
-                            <div class="row g-3">
-                                <!-- First Row -->
-                                <div class="col d-flex justify-content-center border  p-3">
-                                    <img src="./assets/images/welcome.png" width="250" class="border rounded"
-                                        alt="people">
-                                </div>
-                                <div class="col d-flex justify-content-center border p-3">
-                                    <img src="./assets/images/welcome.png" width="250" class="border rounded"
-                                        alt="people">
-                                </div>
+                    <div class="col-12">
+
+                    </div>
+                </div>  
+
+                <div class="row mb-5  flex-column flex-lg-row align-content-center justify-content-md-around">
+                    <div class="col-5 mb-5 p-0">
+                        <img src="./assets/images/welcome.png" width="450px"  alt="people">
+                    </div>
+                    <div class="col-5 align-content-center">
+                        <div class="row  flex-nowrap">
+                            <!-- First Row -->
+                            <div class="col justify-content-center p-0">
+                                <img src="./assets/images/welcome.png" width="200" class="border rounded"
+                                    alt="people">
                             </div>
-                            <div class="row g-3 mt-2">
-                                <!-- Second Row -->
-                                <div class="col d-flex justify-content-center border p-3">
-                                    <img src="./assets/images/welcome.png" width="250" class="border rounded"
-                                        alt="people">
-                                </div>
-                                <div class="col d-flex justify-content-center border p-3">
-                                    <img src="./assets/images/welcome.png" width="250" class="border rounded"
-                                        alt="people">
-                                </div>
+                            <div class="col justify-content-center p-0">
+                                <img src="./assets/images/welcome.png" width="200" class="border rounded"
+                                    alt="people">
                             </div>
                         </div>
+                        <div class="row g-3 flex-nowrap mt-2">
+                            <!-- Second Row -->
+                            <div class="col justify-content-center p-0">
+                                <img src="./assets/images/welcome.png" width="200" class="border rounded"
+                                    alt="people">
+                            </div>
+                            <div class="col justify-content-center p-0">
+                                <img src="./assets/images/welcome.png" width="200" class="border rounded"
+                                    alt="people">
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </div>   
+               
 
-                <div class="row" id="users">
+                <div class="row mb-5" id="users">
                     <div class="col-md-12 ">
                         <div class="card">
                             <div class="card-body">
@@ -187,7 +187,7 @@ require 'includes/config.php'; // Database connection
                 </div>
 
                 <!-- footer -->
-                <footer class="footer mt-5">
+                <footer class="footer mb-5">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
                         <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">
                             Copyright © 2023.
