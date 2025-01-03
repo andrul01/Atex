@@ -6,7 +6,8 @@
         header('Location: dashboard.php');
         exit();
     }
-
+    
+    // login 
     $showError = false;
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -30,12 +31,10 @@
             header("Location: dashboard.php");
             exit();
         } 
-        else{
-            header("Location: index.php"); 
-        }
     }
-    
 
+    
+    
 ?>
 
 <!DOCTYPE html>
