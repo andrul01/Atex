@@ -22,7 +22,4 @@
         echo "No categories found";
     }
     
-
-
-
 ?>

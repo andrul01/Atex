@@ -2,10 +2,10 @@
     require_once('includes/config.php');
 
     // Redirect if already logged in
-    // if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-    //     header('Location: dashboard.php');
-    //     exit();
-    // }
+    if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+        header('Location: dashboard.php');
+        exit();
+    }
     
     // login 
     $showError = false;

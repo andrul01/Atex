@@ -26,7 +26,10 @@
                 <button class="p-2">
                     <img src="./assets/images/menu.png" class="w-6" alt="">
                 </button>
-                <input class="border-none focus:outline-none focus:ring-0 p-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="p-2">
+                    <img src="./assets/images/search.png" class="w-6" alt="">
+                </button>
+                <input class="border-none focus:outline-none focus:ring-0 p-2" type="search" placeholder="Search here" aria-label="Search">
             </form>
             <div class="flex  items-center space-x-4">
                 <a href="#">
@@ -97,23 +100,23 @@
             <p class="text-gray-700">All systems are running smoothly! <span class="text-blue-500">You have 3 unread alerts!</span></p>
             
             <!-- Categories -->
-            <div class="bg-white p-6 rounded shadow mt-6">
+            <div class="bg-white p-6 rounded-lg shadow mt-6">
                 <h3 class="text-lg font-bold mb-4">Welcome</h3>
             </div>
 
 
             <!-- User Table -->
-            <div class="bg-white p-6 rounded shadow mt-6" id="users">
+            <div class="bg-white p-6 rounded-lg shadow mt-6" id="users">
                 <h3 class="text-lg font-bold mb-4">Users</h3>
-                <div class="overflow-x-auto">
-                    <table class="min-w-full table-auto border-collapse">
-                        <thead>
-                            <tr class="bg-blue-500 text-white">
-                                <th class="p-2 text-left">Id.</th>
-                                <th class="p-2 text-left">Username</th>
-                                <th class="p-2 text-left">Password</th>
-                                <th class="p-2 text-left">Edit</th>
-                                <th class="p-2 text-left">Delete</th>
+                <div class="overflow-x-auto max-w-1/2">
+                    <table class="min-w-full table-auto border-collapse ">
+                        <thead class="bg-blue-500 text-white ">
+                            <tr>
+                                <th class="p-4 text-left">Id.</th>
+                                <th class="p-4 text-left">Username</th>
+                                <th class="p-4 text-left">Password</th>
+                                <th class="p-4 text-left">Edit</th>
+                                <th class="p-4 text-left">Delete</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -128,14 +131,14 @@
                                 $password = $row['user_pass'];
                                 echo 
                                 "<tr class='border-t'>
-                                    <td class='p-3'>$id</td>
-                                    <td class='p-3'>$username</td>
-                                    <td class='p-3'>$password</td>
-                                    <td class='p-3'>
-                                        <a href='edit.php?id=$id' class='text-white bg-green-500 px-4 py-2 rounded-full hover:bg-green-600 transition duration-300'>Edit</a>
+                                    <td class='p-4'>$id</td>
+                                    <td class='p-4'>$username</td>
+                                    <td class='p-4'>$password</td>
+                                    <td class='p-4'>
+                                        <a href='edit.php?id=$id' class='text-green-500 border-2 border-green-500  px-4 py-2 rounded-full hover:bg-green-600  hover:text-white transition duration-300'>Edit</a>
                                     </td>
-                                    <td class='p-3'>
-                                        <a href='delete.php?id=$id' class='text-white bg-red-500 px-4 py-2 rounded-full hover:bg-red-600 transition duration-300'>Delete</a>
+                                    <td class='p-4'>
+                                        <a href='delete.php?id=$id' class='text-red-500 border-2 border-red-500 px-4 py-2 rounded-full hover:bg-red-600 hover:text-white transition duration-300'>Delete</a>
                                     </td>
                                 </tr>";
                                 }
@@ -146,17 +149,57 @@
             </div>
 
             <!-- Categories -->
-            <div class="bg-white p-6 rounded shadow mt-6">
+            <div class="bg-white p-6 rounded-lg shadow mt-6">
                 <h3 class="text-lg font-bold mb-4">Categories</h3>
+                <div class="container mx-auto p-2 border-2 flex  ">
+
+                    <!-- Slides -->
+                    <?php
+                        require_once('./includes/config.php');
+
+                        $sql = "SELECT * FROM categories";
+                        $result = mysqli_query($conn, $sql);
+
+                        if($result->num_rows > 0){
+                            while ($row = $result->fetch_assoc()) {
+                                $c_id = $row['id'];
+                                $c_name = $row['name'];
+
+                                echo '
+                                <div class="p-4 bg-white rounded-lg shadow-md">   
+                                    <img src="../img/card_'.$row["id"].'.jpg" width="100px" class="" alt="">
+                                    <h3 class="text-center ">'.substr($c_name, 0, 8).'</h3>
+                                </div>';
+                            }
+                        }  
+                    ?>
+                </div>
+                <div></div>
             </div>
             
             <!-- Footer -->
-            <footer class="w-full bg-white shadow p-4  text-center  mt-6">
-                <span class="text-gray-600">Copyright © 2023. Atex admin All rights reserved.</span>
+            <footer class="w-full bg-white shadow p-4 rounded-lg text-center  mt-6">
+                <span class="text-gray-600">Copyright © 2023. <span class="text-blue-500">Atex</span> admin All rights reserved.</span>
             </footer>
         </main>
 
     </div>
-
+     <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+        slidesPerView: 3, // Number of slides visible at the same time
+        spaceBetween: 10, // Space between slides
+        loop: true, // Infinite scrolling
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        });
+    </script>
 </body>
 </html>
