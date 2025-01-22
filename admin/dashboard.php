@@ -53,7 +53,7 @@
     <div class="flex pt-16">
         
         <!-- Sidebar -->
-        <aside id="sidebar" class="w-64 bg-gray-800 text-white h-screen p-4 hidden md:block  ">
+        <aside id="sidebar" class="w-64 bg-gray-800 text-white h-screen p-4 hidden lg:block  ">
             <ul class=" mt-6">
                 <li class="mb-2 p-2 rounded bg-blue-600">
                     <a href="#" class="flex items-center">
@@ -112,10 +112,57 @@
             </div>
 
 
+            <!-- Record Table -->
+            <div class="w-full mt-4 p-0">
+                <div class="w-full border shadow-sm rounded-lg p-3 bg-white">
+                <h3 class="text-lg font-bold mb-4">Users</h3>
+                    <div class="overflow-x-auto rounded-lg">
+                        <table class="w-full text-left border-collapse border border-gray-300 rounded-lg">
+                            <thead class="bg-blue-500 text-white">
+                                <tr>
+                                    <th class="p-2 border border-gray-300">ID</th>
+                                    <th class="p-2 border border-gray-300">Username</th>
+                                    <th class="p-2 border border-gray-300">Password</th>
+                                    <th class="p-2 border border-gray-300">Edit</th>
+                                    <th class="p-2 border border-gray-300">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody id="load_table">
+                                  <!-- Get Users -->
+                            <?php
+                                $sql = "SELECT * FROM users";
+                                $result = mysqli_query($conn, $sql);
+                                while ($row = $result->fetch_assoc()) {
+                                    $id = $row['sno'];
+                                    $username = $row['user_email'];
+                                    $password = $row['user_pass'];
+                                    echo 
+                                    "<tr class='border-t'>
+                                        <td class='p-4'>$id</td>
+                                        <td class='p-4'>$username</td>
+                                        <td class='p-4'>$password</td>
+                                        <td class='p-4'>
+                                            <a href='edit.php?id=$id' class='text-green-500 border-2 border-green-500  px-4 py-2 rounded-full hover:bg-green-600  hover:text-white transition duration-300'>Edit</a>
+                                        </td>
+                                        <td class='p-4'>
+                                            <a href='delete.php?id=$id' class='text-red-500 border-2 border-red-500 px-4 py-2 rounded-full hover:bg-red-600 hover:text-white transition duration-300'>Delete</a>
+                                        </td>
+                                    </tr>";
+                                }
+                            ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+
             <!-- User Table -->
             <div class="bg-white p-6 rounded-lg shadow mt-6 w-auto" id="users">
                 <h3 class="text-lg font-bold mb-4">Users</h3>
                 <div class="overflow-x-auto max-w-1/2">
+
                     <table class="min-w-full table-auto border-collapse ">
                         <thead class="bg-blue-500 text-white ">
                             <tr>
