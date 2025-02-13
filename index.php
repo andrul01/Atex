@@ -78,7 +78,7 @@
                     $id = $row['id'];
                     $cat = $row['name'];
                     $desc = $row['description'];
-
+                    //desc ="dgjsgfjsdkfd"
                     echo '
                     <div class="card mx-2" >
                         <div class="row no-gutters">

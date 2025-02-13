@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css"> 
+        <link rel="icon" href="img/logo.png"> 
     <style>
         #ques{
             min-height: 400px;
@@ -128,7 +129,7 @@
                     <div class="media-body">'.$content.'
                     </div>'.'
                     <p class="font-weight-bold my-0">
-                        <span class=" font-weight-bold my-0 text-primary">'.$row2['user_email'].'</span>
+                        <span class="font-weight-bold my-0 text-primary">'.$row2['user_email'].'</span>
                         at '.$c_time.'
                     </p>
                 '.'</div>';
