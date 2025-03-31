@@ -41,31 +41,35 @@
           <a class="nav-link active" href="contact.php">Contact</a>
         </li>
       </ul>
-      <div class="row mx-2" >';
-      
-      if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+
+      <div class="row px-2 border d-flex" >';
+        if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+          echo '
+          <form class="form-inline my-2 my-lg-0"  action="search.php" method="get">
+            <input class="form-control mr-sm-2" name="search" type="search"  placeholder="Search" aria-label="Search">
+            <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+            <p class=" my-0 mx-2" >
+              <a class="text-decoration-none text-light  py-2" href="profile.php">
+                Welcome '.$_SESSION['useremail'].'
+              </a>
+            </p>
+            <a href="./Partials/_logout.php" class="btn btn-outline-primary ml-2">Logout</a>
+          </form>';
+        }
+        else{
+           echo '
+            <form class="form-inline my-2 my-lg-0 " action="search.php" method="get">
+              <input class="form-control mr-sm-2" type="search" name="search"  placeholder="Search" aria-label="Search">
+              <button class="btn btn-primary mt-2 mr-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <div class="col ml-lg-2  my-0 py-lg-0 py-md-0 d-flex px-0  ">
+              <div class="conatiner d-flex align-items-center">
+                <button class="btn btn-outline-primary my-2 my-sm-0" data-toggle="modal" data-target="#login">Login</button>
+                <button class="btn btn-outline-primary ml-md-2 ml-2  my-sm-0" data-toggle="modal" data-target="#signup">Signup</button>
+              </div>
+            </div>';
+        }
         echo '
-        <form class="form-inline my-2 my-lg-0  action="search.php" method="get">
-          <input class="form-control mr-sm-2" name="search" type="search"  placeholder="Search" aria-label="Search">
-          <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
-          <p class=" my-0 mx-2" >
-            <a class="text-decoration-none text-light  py-2" href="profile.php">
-              Welcome '.$_SESSION['useremail'].'
-            </a>
-          </p>
-          <a href="./Partials/_logout.php" class="btn btn-outline-primary ml-2">Logout</a>
-        </form>';
-      }
-      else{
-        echo '
-        <form class="form-inline my-2 my-lg-0 " action="search.php" method="get">
-          <input class="form-control mr-sm-2" type="search" name="search"  placeholder="Search" aria-label="Search">
-          <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        <button class="btn btn-outline-primary ml-2 my-2 my-sm-0" data-toggle="modal" data-target="#login">Login</button>
-        <button class="btn btn-outline-primary mx-2 my-2 my-sm-0" data-toggle="modal" data-target="#signup">Signup</button>';
-      }
-      echo '
       </div>
     </div>
   </nav>';
