@@ -42,14 +42,14 @@
         </li>
       </ul>
 
-      <div class="row px-2 border d-flex" >';
+      <div class="row px-2 d-flex" >';
         if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
           echo '
           <form class="form-inline my-2 my-lg-0"  action="search.php" method="get">
             <input class="form-control mr-sm-2" name="search" type="search"  placeholder="Search" aria-label="Search">
             <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
             <p class=" my-0 mx-2" >
-              <a class="text-decoration-none text-light  py-2" href="profile.php">
+              <a class="text-decoration-none text-light  py-2" href="userProfile.php">
                 Welcome '.$_SESSION['useremail'].'
               </a>
             </p>

@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
     integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <link rel="stylesheet" href="style.css"> 
     <link rel="icon" href="img/logo.png"> 
   <title>Atex</title>
   <style>
     .container{
-      min-height: 600px;
-      padding-left:100px ;
-      padding-right:100px ;
+      /* min-height: 600px; */
     }
   </style>
 </head>
@@ -25,12 +25,25 @@
   <?php include './Partials/_header.php' ?>
 
   <!-- About content -->
-  <div class="container my-3">
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        
+  <div class="container my-5 px-5 border rounded shadow">
+    <section class="py-5">
+      <div class="container">
+        <div class="row align-items-center gx-4">
+          <div class="col-md-5">
+            <div class="ms-md-2 ms-lg-5">
+              <img class="img-fluid rounded-3" src="./Img/developer.png">
+            </div>
+          </div>
+          <div class="col-md-6 offset-md-1">
+            <div class="ms-md-2 ms-lg-5">
+              <h2 class="display-5 fw-bold text-primary">About Us</h2>
+              <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+              <p class="lead mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   </div>
 
   <!-- Footer  -->

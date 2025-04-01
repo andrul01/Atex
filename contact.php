@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
     integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <link rel="stylesheet" href="style.css"> 
     <link rel="icon" href="img/logo.png"> 
   <title>Atex</title>
   <style>
     .container{
       min-height: 600px;
-      padding-left:50px ;
-      padding-right:50px ;
     }
 
   </style>
@@ -27,7 +27,7 @@
   <?php include './Partials/_header.php' ?>
   
   <!-- Contact Form -->
-  <div class="container my-3" >
+  <div class="container my-5 border rounded shadow px-5" >
     <h1 class="text-center text-primary">Contact Us</h1>
     <form>
       <div class="form-group">

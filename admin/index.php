@@ -1,12 +1,6 @@
 <?php
     require_once('includes/config.php');
 
-    // Redirect if already logged in
-    if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-        header('Location: dashboard.php');
-        exit();
-    }
-    
     // login 
     $showError = false;
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -18,6 +12,10 @@
         // SQL query to find the user by username
         $sql = "SELECT * FROM admin WHERE username = '$username'";
         $result = mysqli_query($conn, $sql);
+        if (!$result) {
+            die("SQL Error: " . mysqli_error($conn));
+        }
+        
         $numRows = mysqli_num_rows($result);
 
         if($numRows == 1) {
@@ -37,7 +35,6 @@
         } 
     }
 ?>
-
 
 <!doctype html>
 <html>

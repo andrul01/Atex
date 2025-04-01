@@ -19,8 +19,9 @@ echo '
     <div class="col-md-4">
       <h5 class="">Follow Us</h5>
       <div class="d-flex gap-3 flex-row justify-content-center">
+        <a href="#" class="text-light"><i class="fab fa-linkedin fa-2x mx-2"></i></a>
+        <a href="#" class="text-light"><i class="fab fa-github fa-2x mx-2"></i></a>
         <a href="#" class="text-light"><i class="fab fa-facebook fa-2x mx-2"></i></a>
-        <a href="#" class="text-light"><i class="fab fa-twitter fa-2x mx-2"></i></a>
         <a href="#" class="text-light"><i class="fab fa-instagram fa-2x mx-2"></i></a>
       </div>
     </div>

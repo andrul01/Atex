@@ -9,6 +9,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" href="assets/images/favicon1.png" />
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <title>Atex - Admin panel</title>
 </head>
 <body class="flex flex-col min-h-screen bg-gray-100">
@@ -47,52 +50,51 @@
                 </div>
             </div>
         </div>
-
     </nav>
 
     <div class="flex pt-16">
-        
         <!-- Sidebar -->
-        <aside id="sidebar" class="w-64 bg-gray-800 text-white h-screen p-4 hidden lg:block  ">
-            <ul class=" mt-6">
-                <li class="mb-2 p-2 rounded bg-blue-600">
+        <aside id="sidebar" class="w-64 bg-gray-800 text-white h-screen lg:h-[300vh] p-4 hidden lg:block">
+            <ul class="mt-6">
+                <li class="mb-2 p-4 rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-300">
                     <a href="#" class="flex items-center">
-                        <img src="./assets/images/dashboard.png" alt="" class="w-6">
+                        <i class="fas fa-tachometer-alt w-6"></i>  
                         <span class="ml-2">Dashboard</span>
                     </a>
                 </li>
-                <li class="mb-2 p-2 rounded bg-blue-600">
+                <li class="mb-2 p-4 rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-300">
                     <a href="#users" class="flex items-center">
-                        <img src="./assets/images/user.png" alt="" class="w-6">
+                        <i class="fas fa-users w-6"></i>  
                         <span class="ml-2">Users</span>
                     </a>
                 </li>
-                <li class="mb-2 p-2 rounded bg-blue-600" >
+                <li class="mb-2 p-4 rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-300">
                     <a href="#" class="flex items-center">
-                        <img src="./assets/images/categories.png" alt="" class="w-6">
+                        <i class="fas fa-th-large w-6"></i>  
                         <span class="ml-2">Categories</span>
                     </a>
                 </li>
-                <li class="mb-2 p-2 rounded bg-blue-600">
+                <li class="mb-2 p-4 rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-300">
                     <a href="#" class="flex items-center">
-                        <img src="./assets/images/post.png" alt="" class="w-6">
+                        <i class="fas fa-newspaper w-6"></i>  
                         <span class="ml-2">Post</span>
                     </a>
                 </li>
-                <li class="mb-2 p-2 rounded bg-blue-600">
+                <li class="mb-2 p-4 rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-300">
                     <a href="#" class="flex items-center">
-                        <img src="./assets/images/comment.png" alt="" class="w-6">
+                        <i class="fas fa-comments w-6"></i>  
                         <span class="ml-2">Comments</span>
                     </a>
                 </li>
-                <li class="mb-2 p-2 rounded bg-blue-600">
+                <li class="mb-2 p-4 rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-300">
                     <a href="#" class="flex items-center">
-                        <img src="./assets/images/document.png" alt="" class="w-6">
+                        <i class="fas fa-book w-6"></i>  
                         <span class="ml-2">Documentation</span>
                     </a>
                 </li>
             </ul>
         </aside>
+
         
         <!-- Main Content -->
         <main class="flex-1 p-6 bg-gray-50  ">
@@ -101,16 +103,13 @@
             
             <!-- Categories -->
             <div class="md-flex flex-column ">
-
                 <div class="bg-white p-6 rounded-lg shadow mt-6 w-auto">
                     <h3 class="text-lg font-bold mb-4">Notifications</h3>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow mt-6 w-1/2">
                     <h3 class="text-lg font-bold mb-4">Notifications</h3>
                 </div>
-
             </div>
-
 
             <!-- Record Table -->
             <div class="w-full mt-4 p-0">
@@ -155,8 +154,6 @@
                     </div>
                 </div>
             </div>
-
-
 
             <!-- User Table -->
             <div class="bg-white p-6 rounded-lg shadow mt-6 w-auto" id="users">
