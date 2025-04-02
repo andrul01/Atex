@@ -17,14 +17,15 @@ echo '
       <p>Phone: +91 7796064374</p>
     </div>
     <div class="col-md-4">
-      <h5 class="">Follow Us</h5>
+      <h5>Follow Us</h5>
       <div class="d-flex gap-3 flex-row justify-content-center">
-        <a href="#" class="text-light"><i class="fab fa-linkedin fa-2x mx-2"></i></a>
-        <a href="#" class="text-light"><i class="fab fa-github fa-2x mx-2"></i></a>
-        <a href="#" class="text-light"><i class="fab fa-facebook fa-2x mx-2"></i></a>
-        <a href="#" class="text-light"><i class="fab fa-instagram fa-2x mx-2"></i></a>
+        <a href="https://www.linkedin.com/in/dipendrachaturvedi/" class="text-light hover-text-primary"><i class="fab fa-linkedin fa-2x mx-2"></i></a>
+        <a href="https://github.com/andrul01" class="text-light hover-text-primary"><i class="fab fa-github fa-2x mx-2"></i></a>
+        <a href="https://facebook.com/dipendrachaturvedi10" class="text-light hover-text-primary"><i class="fab fa-facebook fa-2x mx-2"></i></a>
+        <a href="https://instagram.com/andrul10" class="text-light hover-text-primary"><i class="fab fa-instagram fa-2x mx-2"></i></a>
       </div>
     </div>
+
   </div>
   <hr class="bg-light">
   <p class="text-center  py-2 mb-0">Copyright <span class="text-primary">Atex</span> tech forum 2024 || All rights reserved</p>

@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
         <link rel="stylesheet" href="style.css"> 
-        <link rel="icon" href="img/logo.png"> 
+        <link rel="icon" href="./Img/logo.png"> 
     <style>
         #ques{
             min-height: 400px;
@@ -72,14 +72,14 @@
         }
     ?>
     <!-- Welcome Category Name -->
-    <div class="container my-5"  id="ques">
+    <!-- <div class="container my-5"  id="ques">
         <div class="jumbotron bg-dark text-light">
             <h1 class="display-4 text-primary"><b>Welcome to <?php echo $cname; ?> Forum</b></h1>
             <p class="lead"><?php echo $cdesc; ?></p>
             <hr class="my-4">
             <a class="btn btn-dark btn-outline-primary btn-lg" href="#" role="button">Learn more</a>
         </div>
-    </div>
+    </div> -->
     
     <!-- Add Query -->
     <?php

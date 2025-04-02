@@ -2,7 +2,7 @@
 <div class="modal fade" id="signup" tabindex="-1" aria-labelledby="signup" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header bg-dark text-primary">
+            <div class="modal-header bg-primary text-white">
                 <h5 class="modal-title" id="signup">signup</h5>
                 <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -28,9 +28,6 @@
                         <input type="password" class="form-control" id="signupcPassword" name="signupcPassword">
                     </div>
                     <button type="submit" class="btn btn-primary">Signup</button>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
                 </form>
             </div>
         </div>

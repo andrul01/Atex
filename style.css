@@ -28,3 +28,7 @@ body{
     font-family: "Roboto Condensed", sans-serif;
     font-size: 15px;
 }
+
+.hover-text-primary:hover {
+    color: var(--bs-primary) !important;
+}

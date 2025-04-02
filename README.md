@@ -10,18 +10,6 @@
 - **SQL Database**: The `atex.sql` file is provided to set up the necessary database schema.
 - **Clean UI**: Custom styling in `style.css` ensures a modern look and feel.
 
-## Installation
 
-### Prerequisites
 
-Make sure your server environment includes:
 
-- **PHP** >= 7.4
-- **MySQL** or a compatible database
-- **Apache/Nginx** (or any web server that supports PHP)
-
-### Setup
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Andrul01/Atex.git

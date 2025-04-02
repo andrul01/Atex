@@ -7,15 +7,14 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
     integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
     <link rel="stylesheet" href="style.css"> 
-    <link rel="icon" href="img/logo.png"> 
+    <link rel="icon" href="./Img/logo.png"> 
   <title>Atex</title>
-  <style>
+  <!-- <style>
     .container{
       /* min-height: 600px; */
     }
-  </style>
+  </style> -->
 </head>
 <body>
   <!-- Connection -->
@@ -25,7 +24,7 @@
   <?php include './Partials/_header.php' ?>
 
   <!-- About content -->
-  <div class="container my-5 px-5 border rounded shadow">
+  <div class="container my-5 px-5 min-vh-100 border rounded shadow">
     <section class="py-5">
       <div class="container">
         <div class="row align-items-center gx-4">

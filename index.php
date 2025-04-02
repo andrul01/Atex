@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="icon" href="img/logo.png"> 
+    <link rel="icon" href="images/logo.png"> 
     <link rel="stylesheet" href="style.css"> 
     <title>Atex</title>
 </head>
@@ -31,7 +31,7 @@
                     $cat = $row['name'];
                     $desc = $row['description'];
                     echo '
-                    <div class="card mx-2 my-2 border rounded-3 shadow">
+                    <div class="card mx-5 my-2 border rounded-3 shadow">
                         <div class="row no-gutters">
                             <div class="col-md-2">
                                 <img src="./Img/card_'.$row['id'].'.jpg" class="card-img-top w-10 h-10" alt="...">

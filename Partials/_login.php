@@ -2,9 +2,9 @@
 <div class="modal fade" id="login" tabindex="-1" aria-labelledby="login" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header bg-primary text-white">
                 <h5 class="modal-title" id="login">Login</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -19,9 +19,6 @@
                         <input type="password" class="form-control" id="loginPass" name="loginPass" >
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
                 </form>
             </div>
         </div>
