@@ -13,76 +13,50 @@
 <body class="flex flex-col min-h-screen bg-gray-100">
 
     <!-- Navbar -->
-    <nav class="flex fixed top-0 w-full bg-white shadow ">
-        <div class="container w-1/5 mx-auto flex justify-between items-center p-4 ">
-            <a class="flex items-center" href="dashboard.php">
-                <img src="./images/favicon.png" alt="Logo" class="w-10 mr-2">
-                <h3 class="text-lg font-bold">tex</h3>
+    <header class="text-gray-600 body-font">
+        <div class="container mx-auto flex p-3 flex-col content-between">
+            <a class="flex title-font font-medium items-center text-gray-900">
+                <img src="./images/favicon.png " class="" width="40px"  alt="">
+                <span class="text-xl">tex</span>
             </a>
         </div>
-        <div class="container flex justify-between items-center p-4">
-            <form class="flex items-center">
-                <button class="p-2">
-                    <img src="./images/menu.png" class="w-6" alt="">
-                </button>
-                <button class="p-2">
-                    <img src="./images/search.png" class="w-6" alt="">
-                </button>
-                <input class="border-none focus:outline-none focus:ring-0 p-2" type="search" placeholder="Search here" aria-label="Search">
-            </form>
-            <div class="flex  items-center space-x-4">
-                <a href="#">
-                    <img src="./images/notify.png" alt="Notifications" class="w-6">
-                </a>
-                <div class="relative">
-                    <button id="profileDropdown">
-                        <img src="./images/admin.png" class="w-8 rounded-full" alt="Profile">
-                    </button>
-                    <ul class="absolute right-0 mt-2 w-48 bg-white shadow-md hidden" id="profileMenu">
-                        <li class="p-2 hover:bg-gray-100"><a href="#">Profile</a></li>
-                        <li class="p-2 hover:bg-gray-100"><a href="#">Settings</a></li>
-                        <li class="p-2 hover:bg-gray-100"><a href="#">Logout</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
+    </header>
 
-    <div class="flex pt-16">
+    <div class="flex">
         <!-- Sidebar -->
-        <aside id="sidebar" class="w-64 bg-gray-800 text-white h-screen lg:h-[300vh] p-4 hidden lg:block">
+        <aside id="sidebar" class="w-64 bg-gray-800 text-white h-screen lg:h-[170vh] p-4 hidden lg:block">
             <ul class="mt-6">
-                <li class="mb-2 p-4 rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-300">
+                <li class="mb-5 p-4 rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-300">
                     <a href="#" class="flex items-center">
                         <i class="fas fa-tachometer-alt w-6"></i>  
                         <span class="ml-2">Dashboard</span>
                     </a>
                 </li>
-                <li class="mb-2 p-4 rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-300">
+                <li class="mb-5 p-4 rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-300">
                     <a href="#users" class="flex items-center">
                         <i class="fas fa-users w-6"></i>  
                         <span class="ml-2">Users</span>
                     </a>
                 </li>
-                <li class="mb-2 p-4 rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-300">
+                <li class="mb-5 p-4 rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-300">
                     <a href="#" class="flex items-center">
                         <i class="fas fa-th-large w-6"></i>  
                         <span class="ml-2">Categories</span>
                     </a>
                 </li>
-                <li class="mb-2 p-4 rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-300">
+                <li class="mb-5 p-4 rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-300">
                     <a href="#" class="flex items-center">
                         <i class="fas fa-newspaper w-6"></i>  
                         <span class="ml-2">Post</span>
                     </a>
                 </li>
-                <li class="mb-2 p-4 rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-300">
+                <li class="mb-5 p-4 rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-300">
                     <a href="#" class="flex items-center">
                         <i class="fas fa-comments w-6"></i>  
                         <span class="ml-2">Comments</span>
                     </a>
                 </li>
-                <li class="mb-2 p-4 rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-300">
+                <li class="mb-5 p-4 rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-300">
                     <a href="#" class="flex items-center">
                         <i class="fas fa-book w-6"></i>  
                         <span class="ml-2">Documentation</span>
@@ -92,7 +66,7 @@
         </aside>
 
         <!-- Main Content -->
-        <main class="flex-1 p-6 bg-gray-50  ">
+        <main class="flex-1 p-6 bg-gray-50 h-screen  lg:h-[170vh]">
             <h3 class="text-xl font-bold">Welcome Andrul</h3>
             <p class="text-gray-700">All systems are running smoothly! <span class="text-blue-500">You have 3 unread alerts!</span></p>
             
@@ -152,17 +126,45 @@
             <!-- add category form -->
             <div class="container bg-white mt-6 border rounded-lg shadow-sm p-5">
                 <h3 class="text-lg font-bold mb-4">Add Categories</h3>
-                <form action="" method="">
+                <form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="POST" enctype="multipart/form-data">
                     <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
-                    <input type="text" id="name" name="name" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                    <label for="message" class="leading-7 text-sm text-gray-600">Description</label>
-                    <textarea id="description" name="description" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 h-20 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>                           
-                    <button class="flex mt-4 text-white bg-blue-500 border-0 py-2 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg">+ Add</button>                          
+                    <input type="text" id="name" name="name" required class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+
+                    <label for="description" class="leading-7 text-sm text-gray-600">Description</label>
+                    <textarea id="description" name="description" required class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 h-20 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>    
+
+                    <label for="file" class="leading-7 text-sm text-gray-600">Upload File</label>
+                    <input type="file" id="image" name="images" required class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+
+                    <button type="submit" class="flex mt-4 text-white bg-blue-500 border-0 py-2 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg">+ Add</button>  
                 </form>
+
+
+                <?php
+                    require_once('./includes/config.php');
+
+                    if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+                        $c_name = $_POST['name'];
+                        $c_description = $_POST['description'];
+                        $image = $_FILES['images']['tmp_name'];
+                        $c_image_data = addslashes(file_get_contents($image)); // Convert image to binary
+
+                        $sql = "INSERT INTO `categories` (`name`, `description`, `images`, `created`) VALUES ('$c_name', '$c_description', '$c_image_data', current_timestamp())";
+                        $result = mysqli_query($conn, $sql);
+
+                        if(!$result){
+                            die("Query Failed :".mysqli_error($conn));
+                        }
+                        else{
+                            echo "Category Added Successfully!";
+                        }    
+                    }
+                ?>
             </div>
         
             <!-- Footer -->
-            <footer class="w-full bg-white border shadow-sm p-4 rounded-lg text-center  mt-6">
+            <footer class="w-full bg-white border shadow-sm p-4 rounded-lg text-center mt-6">
                 <span class="text-gray-600">Copyright © 2023. <span class="text-blue-500">Atex</span> admin All rights reserved.</span>
             </footer>
         </main>

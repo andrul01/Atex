@@ -10,11 +10,6 @@
     <link rel="stylesheet" href="style.css"> 
     <link rel="icon" href="./Img/logo.png"> 
   <title>Atex</title>
-  <!-- <style>
-    .container{
-      /* min-height: 600px; */
-    }
-  </style> -->
 </head>
 <body>
   <!-- Connection -->
@@ -24,7 +19,7 @@
   <?php include './Partials/_header.php' ?>
 
   <!-- About content -->
-  <div class="container my-5 px-5 min-vh-100 border rounded shadow">
+  <div class="container my-5 px-5">
     <section class="py-5">
       <div class="container">
         <div class="row align-items-center gx-4">

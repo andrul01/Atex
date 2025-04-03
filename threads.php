@@ -3,20 +3,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-        <link rel="stylesheet" href="style.css"> 
-        <link rel="icon" href="./Img/logo.png"> 
-    <style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="icon" href="./Img/logo.png"> 
+    <!-- <style>
         #ques{
             min-height: 400px;
         }
-    </style>
-    
+    </style> -->
     <title>Atex</title>
-
 </head>
 <body> 
 
@@ -32,8 +28,8 @@
         $sql = "SELECT * FROM `categories` WHERE id='$id' "; 
         $result = mysqli_query($conn,$sql);
         while($row = mysqli_fetch_assoc($result)){
-          $cname = $row['name'];
-          $cdesc = $row['description'];
+            $cname = $row['name'];
+            $cdesc = $row['description'];
         }
     ?>
 
@@ -46,7 +42,6 @@
             // Insert into threads
             $th_title = $_POST['title'];
             $th_description = $_POST['desc'];
-
 
             // sanitize from attack
             $th_title = str_replace("<","&lt;",$th_title);
@@ -71,21 +66,12 @@
             }
         }
     ?>
-    <!-- Welcome Category Name -->
-    <!-- <div class="container my-5"  id="ques">
-        <div class="jumbotron bg-dark text-light">
-            <h1 class="display-4 text-primary"><b>Welcome to <?php echo $cname; ?> Forum</b></h1>
-            <p class="lead"><?php echo $cdesc; ?></p>
-            <hr class="my-4">
-            <a class="btn btn-dark btn-outline-primary btn-lg" href="#" role="button">Learn more</a>
-        </div>
-    </div> -->
     
     <!-- Add Query -->
     <?php
         if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
             echo '
-            <div class="container my-5" id="ques">
+            <div class="container my-5 py-4 border rounded-3 shadow">
                 <h1>Ask your query</h1>
                 <form action=" '.$_SERVER['REQUEST_URI'].'" method="post" >
                     <div class="form-group"> 
@@ -114,10 +100,9 @@
     ?>
 
     <!-- Question Fetch Query -->
-    <div class="container my-4 mb-0">  
+    <div class="container my-4 border rounded shadow mb-0">  
         <h1 class="py-2">Queries</h1> 
         <?php 
-
             $id = $_GET['catid']; 
             $sql = "SELECT * FROM `threads` WHERE thread_cat_id = $id ";
             $result = mysqli_query($conn,$sql);

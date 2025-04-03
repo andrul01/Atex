@@ -11,12 +11,6 @@
     <link rel="stylesheet" href="style.css"> 
     <link rel="icon" href="./Img/logo.png"> 
   <title>Atex</title>
-  <style>
-    .container{
-      min-height: 600px;
-    }
-
-  </style>
 </head>
 <body>
 
@@ -27,7 +21,7 @@
   <?php include './Partials/_header.php' ?>
   
   <!-- Contact Form -->
-  <div class="container my-5 border rounded shadow px-5" >
+  <div class="container my-5 border rounded shadow px-5 py-5" >
     <h1 class="text-center text-primary">Contact Us</h1>
     <form>
       <div class="form-group">
