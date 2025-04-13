@@ -1,69 +1,58 @@
-<?php
-    require_once('includes/config.php');
-
-    // login 
-    $showError = false;
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-        // Get input values from form
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-
-        // SQL query to find the user by username
-        $sql = "SELECT * FROM admin WHERE username = '$username'";
-        $result = mysqli_query($conn, $sql);
-        if (!$result) {
-            die("SQL Error: " . mysqli_error($conn));
-        }
-        
-        $numRows = mysqli_num_rows($result);
-
-        if($numRows == 1) {
-            $row = mysqli_fetch_assoc($result);
-            session_start();
-            $_SESSION['admin'] = true;              // Set admin session
-            $_SESSION['username'] = $username;      // Store username
-            $_SESSION['sno'] = $row['id'];          // Store user ID (primary key)
-            
-            // Redirect to the dashboard
-            header("Location: dashboard.php");
-            exit();
-        }
-        else{
-            header("Location: index.php");
-            exit();
-        } 
-    }
-?>
-
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" href="./images/favicon.png" />
-    <title>Atex - Admin panel</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atex - Admin Panel</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="./images/favicon.png">
 </head>
-<body>
+<body class="bg-light">
 
-    <!-- Login form  -->
-    <div class="bg-gray-100 rounded-lg p-8 flex flex-col m-8 mt-40 md:m-auto md:mt-40 md:w-1/2 lg:w-1/3 ">
-        <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Admin Login</h2>
-        <form action="" method="POST">
-            <div class="relative mb-4">
-    
-                <label for="full-name" class="leading-7 text-sm text-gray-600">Username</label>
-                <input type="text" id="full-name" name="username" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-            </div>
-            <div class="relative mb-2">
-                <label for="password" class="leading-7 text-sm text-gray-600">Password</label>
-                <input type="text" id="email" name="password" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-            </div>
-            <p class="text-xs text-blue-300 mt-3 mb-5">forget password?.</p>
-            <button type="submit" class="text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">login</button>
-        </form>
+  <!-- Login Form -->
+  <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="bg-white shadow p-5 rounded w-100" style="max-width: 400px;">
+      <h2 class="mb-4 text-center text-primary">Admin Login</h2>
+      <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" name="username" id="username" class="form-control" required>
+        </div>
+        <div class="mb-2">
+          <label for="password" class="form-label">Password</label>
+          <input type="text" name="password" id="password" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <a href="#" class="small text-decoration-none text-primary">Forgot password?</a>
+        </div>
+        <button type="submit" name="login" class="btn btn-primary w-100">Login</button>
+      </form>
+      
+      <!-- login code -->
+      <?php
+        if (isset($_POST['login'])) {
+          include "./includes/config.php";
+          $username = mysqli_real_escape_string($conn, $_POST['username']);
+          $password = md5($_POST['password']);
+          $sql = "SELECT id, username, password FROM admin WHERE username = '{$username}' AND '{$password}'";
+          $result = mysqli_query($conn, $sql) or die('Query Failed');
+
+          if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+              session_start();
+              $_SESSION['username'] = $row['username'];
+              $_SESSION['password'] = $row['password'];
+
+              header("Location: ./dashboard.php");
+            }
+          } else {
+            echo '<div class="alert alert-danger mt-3">Username and Password are not matched.</div>';
+          }
+        }
+      ?>
     </div>
-   
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

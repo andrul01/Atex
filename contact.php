@@ -13,31 +13,51 @@
   <title>Atex</title>
 </head>
 <body>
+   <!-- Connection -->
+   <?php include './Partials/_dbconnect.php'; ?>
 
-  <!-- Connection -->
-  <?php include './Partials/_dbconnect.php'; ?>
-
-  <!-- Footer -->
+  <!-- Header -->
   <?php include './Partials/_header.php' ?>
   
   <!-- Contact Form -->
-  <div class="container my-5 border rounded shadow px-5 py-5" >
+  <div class="container my-5 border rounded shadow px-5 py-5">
     <h1 class="text-center text-primary">Contact Us</h1>
-    <form>
+    <form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="POST">
       <div class="form-group">
-        <label for="exampleFormControlInput1">Name</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="">
       </div>
       <div class="form-group">
-        <label for="exampleFormControlInput1">Email</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="">
       </div>
       <div class="form-group">
-        <label for="exampleFormControlTextarea1">Message</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <label for="phone">Phone</label>
+        <input type="text" class="form-control" id="phone" name="phone" placeholder="">
       </div>
-      <button type="button" class="btn btn-dark ">Submit</button>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-dark ">Submit</button>
     </form>
+
+    <?php
+      if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $message = $_POST['message'];
+        $sql = "INSERT INTO `contact` (`name`, `email`, `phone`,`message`, `dt`) VALUES ('$name', '$email',  '$phone', '$message', current_timestamp());";
+        $result = mysqli_query($conn, $sql);
+        if(!$result){
+            die("Query Failed:".mysqli_error($conn) );
+        }
+        else{
+            echo '<h4 class="my-4">Message Send Successfully!</h4>';
+        }    
+      }
+    ?>
   </div>
 
   <!-- Footer -->
