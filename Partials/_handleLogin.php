@@ -11,13 +11,12 @@
         if($numRows == 1){
             $row = mysqli_fetch_assoc($result);
             if(password_verify($pass,$row['user_pass'])){
+
                 session_start();
                 $_SESSION['loggedin'] = true;
-                
                 $_SESSION['sno'] = $row['sno'];
-
                 $_SESSION['useremail'] = $email;
-                echo "Logged In", $email; 
+
                 header("Location:/Atex/index.php?loginsuccess=true"); 
             }
             else{

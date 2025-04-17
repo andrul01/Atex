@@ -11,13 +11,8 @@
             <div class="modal-body">
                 <form action=" ./Partials/_handleSignup.php" method="post">
                     <div class="mb-3">
-
-                        <!-- <label for="exampleInputEmail1" class="form-label">Email address</label> -->
-                        <!-- <input type="email" class="form-control" id="signupEmail" name="signupEmail" aria-describedby="emailHelp"> -->
-
                         <label for="exampleInputEmail1" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="signupEmail" name="signupEmail" aria-describedby="emailHelp">
-                        
+                        <input type="text" class="form-control" id="signupEmail" name="signupEmail" aria-describedby="emailHelp">  
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Password</label>

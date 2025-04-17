@@ -9,9 +9,7 @@
     <link rel="stylesheet" href="style.css"> 
     <title>Atex</title>
 </head>
-
 <body>
-    
     <!-- Connection -->
     <?php include './Partials/_dbconnect.php'; ?>
 
@@ -23,7 +21,6 @@
         <h2 class=" text-center">Categories</h2>
         <div class="row">
             <?php 
-              
                 $sql ="SELECT * FROM `categories`";
                 $result = mysqli_query($conn, $sql);
                 while($row = mysqli_fetch_array($result)){ 
@@ -31,7 +28,7 @@
                     $cat = $row['name'];
                     $desc = $row['description'];
                     echo '
-                    <div class="card mx-5 my-2 border rounded-3 shadow">
+                    <div class="card mx-5 my-2 border shadow-sm rounded-0">
                         <div class="row no-gutters">
                             <div class="col-md-2">
                                 <img src="./Img/card_'.$row['id'].'.jpg" class="card-img-top w-10 h-10" alt="...">

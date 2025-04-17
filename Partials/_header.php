@@ -47,24 +47,33 @@
           echo '
           <form class="form-inline my-2 my-lg-0"  action="search.php" method="get">
             <input class="form-control mr-sm-2" name="search" type="search"  placeholder="Search" aria-label="Search">
-            <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
-            <p class=" my-0 mx-2" >
-              <a class="text-decoration-none text-light  py-2" href="userProfile.php">
-                Welcome '.$_SESSION['useremail'].'
+           <button class="btn btn-dark" type="submit" title="Search">
+              <i class="fas fa-magnifying-glass text-white"></i>
+            </button>
+            <p class="my-0 mx-2">
+              <a class="text-decoration-none text-light" href="userProfile.php?user=' . urlencode($_SESSION['useremail']) . '">
+                Welcome ' . $_SESSION['useremail'] . '
               </a>
             </p>
-            <a href="./Partials/_logout.php" class="btn btn-outline-primary ml-2">Logout</a>
+            
+            <a href="./Partials/_logout.php" class="btn btn-dark p-2" title="Logout">
+              <i class="fas fa-right-from-bracket text-white"></i>
+            </a>
           </form>';
         }
         else{
            echo '
-            <form class="form-inline my-2 my-lg-0 " action="search.php" method="get">
+            <form class="form-inline my-2 my-lg-0" action="search.php" method="get">
+            <div class="col-lg-2 col-md-2 col-sm-12 d-flex justify-content-center pl-0">
               <input class="form-control mr-sm-2" type="search" name="search"  placeholder="Search" aria-label="Search">
-              <button class="btn btn-primary mt-2 mr-2 my-sm-0" type="submit">Search</button>
+              <button class="btn btn-dark" type="submit" title="Search">
+                <i class="fas fa-magnifying-glass text-white"></i>
+              </button>
+            </div>
             </form>
-            <div class="col ml-lg-2  my-0 py-lg-0 py-md-0 d-flex px-0  ">
+            <div class="col ml-lg-2  my-0 py-lg-0 py-md-0 d-flex px-0">
               <div class="conatiner d-flex align-items-center">
-                <button class="btn btn-outline-primary my-2 my-sm-0" data-toggle="modal" data-target="#login">Login</button>
+                <button class="btn btn-primary my-2 my-sm-0" data-toggle="modal" data-target="#login">Login</button>
                 <button class="btn btn-outline-primary ml-md-2 ml-2  my-sm-0" data-toggle="modal" data-target="#signup">Signup</button>
               </div>
             </div>';
@@ -76,43 +85,78 @@
   include './Partials/_login.php';
   include './Partials/_signup.php';
   
-  // Signup Alert
+  // Signup Success
   if(isset($_GET['signupsuccess']) && $_GET['signupsuccess'] == "true"){
     echo '
-    <div class="alert alert-success alert-dismissible fade show my-0" role="alert">
-    <strong>Success!</strong> Your account has been created successfully.
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>';
+    <div id="signupSuccessAlert" class="position-fixed" style="top: 2rem; right: 0rem; z-index: 1050;">
+      <div class="alert alert-success alert-dismissible fade show shadow" role="alert">
+        <strong>Success!</strong> Your account has been created successfully.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+
+    <script>
+      setTimeout(function() {
+        $("#signupSuccessAlert .alert").alert("close");
+      }, 3000);
+    </script>';
   }
+
+  // Signup Failed
   if(isset($_GET['signupsuccess']) && $_GET['signupsuccess'] == "false"){
     echo '
-    <div class="alert alert-danger alert-dismissible fade show my-0" role="alert">
-    <strong>Alert!</strong> You enter a invalide Email or password not match.
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>';
+    <div id="signupErrorAlert" class="position-fixed" style="top: 2rem; right: 0rem; z-index: 1050;">
+      <div class="alert alert-danger alert-dismissible fade show shadow" role="alert">
+        <strong>Alert!</strong> Invalid email or password mismatch.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+
+    <script>
+      setTimeout(function() {
+        $("#signupErrorAlert .alert").alert("close");
+      }, 3000);
+    </script>';
   }
-  
-  // Login Alert
+
+  // Login alert
   if(isset($_GET['loginsuccess']) && $_GET['loginsuccess'] == "true"){
     echo '
-    <div class="alert alert-success alert-dismissible fade show my-0" role="alert">
-    <strong>Success!</strong> Login successfull.
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>';
+    <div id="loginAlert" class="position-fixed" style="top: 2rem; right: 0rem; z-index: 1050;">
+      <div class="alert alert-success alert-dismissible fade show shadow" role="alert">
+        <strong>Success!</strong> Login successful.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+  
+    <script>
+      setTimeout(function() {
+        $("#loginAlert .alert").alert("close");
+      }, 3000);
+    </script>';
   }
+
   if(isset($_GET['loginsuccess']) && $_GET['loginsuccess'] == "false"){
     echo '
-    <div class="alert alert-danger alert-dismissible fade show my-0" role="alert">
-    <strong>Alert!</strong> Invalide credentials please check.
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>';
+    <div id="loginErrorAlert" class="position-fixed" style="top: 2rem; right: 0rem; z-index: 1050;">
+      <div class="alert alert-danger alert-dismissible fade show shadow" role="alert">
+        <strong>Alert!</strong> Invalid credentials, please check.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+
+    <script>
+      setTimeout(function() {
+        $("#loginErrorAlert .alert").alert("close");
+      }, 3000);
+    </script>';
   }
 ?>
